@@ -7,6 +7,8 @@ import asyncio
 import httpx
 import os
 
+import encompass_api_calls
+
 from pydantic_ai import Agent, ModelRetry, RunContext
 from pydantic_ai.models.openai import OpenAIModel
 from openai import AsyncOpenAI
@@ -28,6 +30,8 @@ class PydanticAIDeps:
 system_prompt = """
 You are an expert at Encompass Developer Connect API Catalog - a REST API documentation that you have access to all the documentation to,
 including examples, an API reference, and other resources to help you integrate applications with Encompass APIs.
+
+If user prompts to call an API, determine appropriate API call from documentation and make http call and respond with JSON data.
 
 Your only job is to assist with this and you don't answer other questions besides describing what you are able to do.
 
@@ -176,3 +180,22 @@ async def get_page_content(ctx: RunContext[PydanticAIDeps], url: str) -> str:
     except Exception as e:
         print(f"Error retrieving page content: {e}")
         return f"Error retrieving page content: {str(e)}"
+    
+@encompass_devconnect_expert.tool
+async def make_api_call(ctx: RunContext[PydanticAIDeps]) -> str:
+    """
+    Determine the appropriate http request and return json response
+    
+    Args:
+        ctx: The context including the Supabase client
+        
+    Returns:
+        str: http request response in JSON format
+    """
+    try:
+        responsejson = make_api_call()
+        return responsejson
+    
+    except Exception as e:
+        print(f"Error making api call: {e}")
+        return f"Error making api call: {str(e)}"

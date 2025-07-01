@@ -7,3 +7,4 @@ anthropic
 logfire
 pydantic_ai
 streamlit
+requests
