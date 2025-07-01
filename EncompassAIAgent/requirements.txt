@@ -1,0 +1,9 @@
+crawl4ai
+playwright
+supabase
+pydantic
+openai
+anthropic
+logfire
+pydantic_ai
+streamlit
