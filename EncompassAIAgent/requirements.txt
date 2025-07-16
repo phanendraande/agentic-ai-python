@@ -8,3 +8,5 @@ logfire
 pydantic_ai
 streamlit
 requests
+crewai
+matplotlib

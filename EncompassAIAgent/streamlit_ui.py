@@ -11,16 +11,12 @@ from openai import AsyncOpenAI
 
 # Import all the message part classes
 from pydantic_ai.messages import (
-    ModelMessage,
+    # ModelMessage,
     ModelRequest,
     ModelResponse,
-    SystemPromptPart,
+    # SystemPromptPart,
     UserPromptPart,
-    TextPart,
-    ToolCallPart,
-    ToolReturnPart,
-    RetryPromptPart,
-    ModelMessagesTypeAdapter
+    TextPart
 )
 from encompass_devconnect_expert import encompass_devconnect_expert, PydanticAIDeps
 
