@@ -4,7 +4,7 @@ playwright install
 pip install -r .\requirements.txt
 streamlit run streamlit_ui.py
 
-
+To update pip, run: python.exe -m pip install --upgrade pip
 
 filter_json = {
         "filter": {
