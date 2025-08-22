@@ -1,0 +1,10 @@
+python-dotenv
+langgraph
+langchain
+langsmith
+langchain_openai
+langchain_tavily
+langchain-mcp-adapters
+fastmcp
+fastapi
+uvicorn
